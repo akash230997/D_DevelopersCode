@@ -42,7 +42,7 @@ function OtherComponent() {
                   <td>{elem.age}</td>
                   <td>{elem.email}</td>
                   <td propsID={elem.id}>
-                    <Link to="/userprofile">
+                    <Link to={`/userprofile/${elem.id}`}>
                       <Button variant="text">View More</Button>
                     </Link>
                   </td>

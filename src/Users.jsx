@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 import { useParams } from "react-router-dom";
@@ -10,9 +10,12 @@ function Users() {
     const dataFetchByContextApi = useContext(dataComingFromBack);
     console.log(dataFetchByContextApi);
     let { id } = useParams();
-    console.log(id)
+    // console.log(id)
+    // console.log(dataFetchByContextApi);
     const comingData = dataFetchByContextApi.filter((currelem,elem)=>{
-        return currelem.id === id;
+        if(id){
+            return currelem.id === Number(id);
+        }
     })
     console.log(comingData);
     // debugger
@@ -30,7 +33,7 @@ function Users() {
       >
         <thead>
           <tr>
-            <th>Bank</th>
+            <th>Name</th>
             <th>cardExpire</th>
             <th>cardNumber</th>
             <th>cardType</th>
@@ -39,22 +42,20 @@ function Users() {
           </tr>
         </thead>
         <tbody>
-          {dataFetchByContextApi.filter((elem,index)=>{
-
-            
-          })}
-
-          {/* {dataFetchByContextApi.map((currElen, index) => {
-            return (
-              <tr key={currElen.id}>
-                <td>{currElen.bank}</td>
-                <td>{currElen.cardExpire}</td>
-                <td>{currElen.cardType}</td>
-                <td>{currElen.currency}</td>
-                <td>{currElen.iban}</td>
-              </tr>
-            );
-          })} */}
+          <tr>
+            {comingData.map((currElem, index) => {
+              return (
+                <>
+                  <td>{currElem.firstName}</td>
+                  <td>{currElem.bank.cardExpire}</td>
+                  <td>{currElem.bank.cardNumber}</td>
+                  <td>{currElem.bank.cardType}</td>
+                  <td>{currElem.bank.currency}</td>
+                  <td>{currElem.bank.iban}</td>
+                </>
+              );
+            })}
+          </tr>
         </tbody>
       </Table>
       <OtherComponent />

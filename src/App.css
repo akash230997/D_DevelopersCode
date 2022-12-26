@@ -13,7 +13,7 @@ table{
 thead{
   border: 2px solid black;
   /* z-index: 10; */
-  padding: 50px;
+  /* padding: 50px; */
   color: black;
 }
 tr:hover{

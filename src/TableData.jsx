@@ -28,7 +28,9 @@ function TableData() {
 
   return (
     <div className="App">
-      <h1>D_Developers Data</h1>
+      <center>
+        <h1>D_Developers Data (❁´◡`❁)</h1>
+      </center>
 
       <table>
         <thead>

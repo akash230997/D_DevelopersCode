@@ -23,7 +23,7 @@ function App() {
     funcData()
   }, []);
 
-  console.log("Coming from APIs",DataAPI.bank)
+  // console.log("Coming from APIs",DataAPI.bank)
   return (
     <>
       <BrowserRouter>
