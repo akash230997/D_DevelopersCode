@@ -1,11 +1,13 @@
+/* eslint-disable array-callback-return */
 import React, { useContext } from "react";
-import Table from "@mui/material/Table";
+// import Table from "@mui/material/Table";
 // import TableBody from "@mui/material/TableBody";
 // import TableCell from "@mui/material/TableCell";
 // import TableContainer from "@mui/material/TableContainer";
 // import TableHead from "@mui/material/TableHead";
 // import TableRow from "@mui/material/TableRow";
 // import Paper from "@mui/material/Paper";
+import Table from "react-bootstrap/Table";
 import Button from "@mui/material/Button";
 import { NavLink } from "react-router-dom";
 import { dataComingFromBack } from "./App";
@@ -32,7 +34,15 @@ function TableData() {
         <h1>D_Developers Data (❁´◡`❁)</h1>
       </center>
 
-      <table>
+      <Table
+        style={{ width: "80%" }}
+        cellPadding="10px"
+        striped
+        border="1"
+        cellSpacing="0"
+        hover
+        variant="dark"
+      >
         <thead>
           <tr>
             <th>S.No</th>
@@ -74,7 +84,7 @@ function TableData() {
             }
           })}
         </tbody>
-      </table>
+      </Table>
 
       {/* <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">

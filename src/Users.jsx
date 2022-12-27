@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 import Table from "react-bootstrap/Table";
@@ -12,12 +13,12 @@ function Users() {
     let { id } = useParams();
     // console.log(id)
     // console.log(dataFetchByContextApi);
-    const comingData = dataFetchByContextApi.filter((currelem,elem)=>{
+    const comingData = dataFetchByContextApi.filter((currelem)=>{
         if(id){
             return currelem.id === Number(id);
         }
     })
-    console.log(comingData);
+    // console.log(comingData);
     // debugger
   return (
     <div>

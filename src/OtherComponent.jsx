@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext } from 'react';
 import Table from "react-bootstrap/Table";
 import { dataComingFromBack } from './App';
@@ -6,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function OtherComponent() {
     const dataFetchByContextApi = useContext(dataComingFromBack);
-    console.log("dataComingFrom App", dataFetchByContextApi);
+    // console.log("dataComingFrom App", dataFetchByContextApi);
   return (
     <div>
       <center>
